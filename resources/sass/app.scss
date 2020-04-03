@@ -203,15 +203,35 @@ body{
         }
     }
 
-    .collection {
-        section {
-            .Dashboard {
-                margin-left: 100px;
-                margin-right: 100px;
-                width:calc(100%-200px);
-                .TopDashboard {
+collection {
+    background-color: #934;
+    .listGame {
+        .dashboard {
+            margin-left: 100px;
+            margin-right: 100px;
+            width: 100%;
+            font-size: 20px;
 
+
+            .topDashboard {
+                display: flex;
+            }
+
+            .game{
+                display: flex;
+                .input {
+                    width: 100px;
                 }
+            }
+            .id {
+                width : 100px;
+            }
+            .name {
+                width : 500px;
+            }
+            .support {
+                width : 500px;
             }
         }
     }
+}

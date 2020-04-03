@@ -27,30 +27,39 @@
     <header>
         <h1>LUDOTHEQUE</h1>
     </header>
-    <section>
-      <table class="Dashboard">
-        <thead class="topDashboard">
-          <th>Id</th>
-          <th>Nom</th>
-          <th>Supports</th>
-        </thead>
-        @foreach($games as $value => $game)
-        <tbody class="car">
-          <tr>
-            <p>{{ $game[$value]->idgame }}</p>
-          </tr>
-          <tr>
-            <p>{{ $game[$value]->name }}</p>
-          </tr>
-          <tr>
-            <p>{{ $game[$value]->platform }}</p>
-          </tr>
-          <form method="post" action="{{ route('deleteCollection') }}">
-            <input type="hidden" name="id" value="{{ $game[$value]->id }}">
-            <input type="submit" placeholder="Suprimer">
-          </form>
-        </tbody>
-        @endforeach
+    <section class="listGame">
+      <div class="dashboard">
+        <div class="topDashboard">
+          <div class="id">
+          	<p>Id</p>
+          </div>
+          <div class="name">
+          <p>Nom</p>
+          </div>
+          <div class="support">
+          <p>Supports</p>
+          </div>
+        </div>
+	    <div>
+	        @foreach($games as $value => $game)
+	        <div class="game">
+	          <div class="id">
+	            <p>{{ $game->idgame }}</p>
+	          </div>
+	          <div class="name">
+	            <p>{{ $game->name }}</p>
+	          </div>
+	          <div class="support">
+	            <p>{{ $game->support}}</p>
+	          </div>
+	          <form method="post" action="{{ route('deleteCollection') }}">
+	            @csrf
+	            <input type="hidden" name="id" value="{{ $game->id }}">
+	            <input type="submit" value="Suprimer">
+	          </form>
+	        </div>
+	        @endforeach
+	   	</div>
       </div>
     </section>
     <footer>
