@@ -23,23 +23,33 @@
     <title>LUDOTHEQUE</title>
   </head>
 <!-- --> 
-  <body>
+  <body class="collection">
     <header>
         <h1>LUDOTHEQUE</h1>
     </header>
     <section>
-      <div class="tableau">
-        <div class="topTableau">
-          <p>Icon</p>
-          <p>Nom</p>
-          <p>Supports</p>
-        </div>
-        @foreach($cars as $car)
-        <div class="car">
-          <p>{{ $car->brand }}</p>
-          <p>{{ $car->model }}</p>
-          <p>{{ $car->color }}</p>
-        </div>
+      <table class="Dashboard">
+        <thead class="topDashboard">
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Supports</th>
+        </thead>
+        @foreach($games as $value => $game)
+        <tbody class="car">
+          <tr>
+            <p>{{ $game[$value]->idgame }}</p>
+          </tr>
+          <tr>
+            <p>{{ $game[$value]->name }}</p>
+          </tr>
+          <tr>
+            <p>{{ $game[$value]->platform }}</p>
+          </tr>
+          <form method="post" action="{{ route('deleteCollection') }}">
+            <input type="hidden" name="id" value="{{ $game[$value]->id }}">
+            <input type="submit" placeholder="Suprimer">
+          </form>
+        </tbody>
         @endforeach
       </div>
     </section>

@@ -35,21 +35,28 @@
      	 	<img class="jaquette" src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{ $game[0]->image_id }}.jpg">
      	 	<h1>{{ $response[0]->name}}</h1>
       	</div>
-        <div>
-          <p>{{$response[0]->summary}}</p>
+        <div class="info">
+          <div class="summary">
+            <p>{{$response[0]->summary}}</p>
+          </div>
+          <div class="down">
+            <div class="rate">
+              <img src="{{$rate}}">
+            </div>
+            <div class="rating">
+              <p>{{$response[0]->rating}} / 100</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <img src="{{$rate}}">
-        </div>
-        <div>
-          <p>{{$response[0]->rating}}</p>
-        </div>
+        <h2>Ajouter à la collection</h2>
         <form method="post" action="{{ route('addCollection') }}">
+            @csrf
             <SELECT name="platform" size="1" id="platform">
-              @foreach($platforms as $platforms)
-                <OPTION value="{{$response[0]->platforms}}">{{ $platforms[0]->name }}
-              @endforeach
+            @foreach($platforms as $value => $platform)
+              <OPTION value="{{$platform[0]->name}}">{{$platform[0]->name}}
+            @endforeach
             </SELECT>
+            <input type="hidden" name="id" value="{{ $response[0]->id}}">
             <input type="hidden" name="name" value="{{ $response[0]->name}}">
             <input type="submit" placeholder="Ajouter à la collection">
         </form>

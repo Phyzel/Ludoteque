@@ -19,7 +19,9 @@ Route::post('contact-ok', 'ContactController@send');
 //Route::get('/search/', 'SearchController@index')->name('search');
 //Route::post('/game/', 'GameController@index')->name(npm'games');
 Route::post('/game', 'GameController@index')->name('games');
-Route::post('/game/addGame', 'GameCollection@add')->name('addCollection');
+Route::post('/game/addcollection', 'GameCollection@add')->name('addCollection');
+Route::post('/game/collection', 'GameCollection@add')->name('collection');
+Route::post('/game/delcollection', 'GameCollection@delete')->name('deleteCollection');
 
 Route::get('/test/{id}', function($id){
 	echo 'Test ';

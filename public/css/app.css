@@ -1,19 +1,23 @@
-header {
-  margin: 50px;
+body {
+  background-color: #222;
+  overflow-x: hidden;
 }
 
-header h1 {
+body header {
+  padding: 50px;
+}
+
+body header h1 {
   font-size: 50px;
   text-align: center;
   color: blueviolet;
 }
 
-section {
+body section {
   height: 100vh;
-  overflowY: hidden;
 }
 
-section input {
+body section input {
   border: none;
   border-radius: 50px;
   width: 500px;
@@ -29,21 +33,21 @@ section input {
   transition-duration: 0.7s;
 }
 
-section input:hover {
+body section input:hover {
   background-color: #333333;
   transition-duration: 0.7s;
 }
 
-section input:focus {
+body section input:focus {
   background-color: red;
   transition-duration: 0.7s;
 }
 
-section .submit {
+body section .submit {
   margin-top: 200px;
 }
 
-section .gameCase {
+body section .gameCase {
   position: absolute;
   bottom: 0;
   display: flex;
@@ -51,7 +55,7 @@ section .gameCase {
   height: 200px;
 }
 
-section .gameCase .game {
+body section .gameCase .game {
   height: 200px;
   width: 10%;
   margin-left: -5%;
@@ -62,50 +66,151 @@ section .gameCase .game {
   box-shadow: 0 0 20px 0 black;
 }
 
-section .gameCase .game:first-child {
+body section .gameCase .game:first-child {
   margin-left: 0;
 }
 
-section .gameCase .game:hover {
+body section .gameCase .game:hover {
   transform: translateY(-50px);
   transition-duration: 0.5s;
 }
 
-section .gameCase .game img {
+body section .gameCase .game img {
   height: 200px;
   width: 100%;
 }
 
-.oneGame {
-  Background-color: white;
-}
-
 .oneGame header {
+  width: 100%;
   position: relative;
-  background-color: red;
-  height: 200px;
+  background-color: #222;
   z-index: 1;
+  margin: none;
 }
 
 .oneGame section .baniere {
   position: relative;
   z-index: 0;
-  width: 100%;
+  height: 100%;
   transform: translateY(-33%);
   -webkit-filter: blur(5px);
           filter: blur(5px);
 }
 
+.oneGame section .baniere img {
+  width: 100%;
+}
+
 .oneGame section .description {
   position: relative;
   z-index: 1;
-  background-color: red;
-  margin-left: 350px;
-  margin-top: -300px;
+  background-color: #222;
+  margin-left: 0px;
+  top: -400px;
 }
 
 .oneGame section .description .jaquette {
   transform: translateY(-50%);
-  margin-left: -50px;
+  margin-left: 50px;
+}
+
+.oneGame section .description h1 {
+  color: blue;
+  position: absolute;
+  top: 25%;
+  font-size: 50px;
+  left: 364px;
+  transform: translateY(-50%);
+}
+
+.oneGame section .info {
+  background-color: #222;
+  color: white;
+  position: relative;
+  top: -500px;
+  z-index: 2;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.oneGame section .info .summary {
+  font-size: 30px;
+}
+
+.oneGame section .info .down {
+  position: relative;
+  margin-top: 50px;
+}
+
+.oneGame section .info .down .rate {
+  position: absolute;
+  right: 0;
+}
+
+.oneGame section .info .down .rate img {
+  width: 100px;
+}
+
+.oneGame section .info .down .rating {
+  font-size: 50px;
+}
+
+.oneGame section form {
+  color: white;
+  top: -400px;
+  position: relative;
+}
+
+.oneGame section form h2 {
+  font-size: 50px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  text-decoration: underline;
+}
+
+.oneGame section form select {
+  color: white;
+  background-color: #222;
+  position: absolute;
+  height: auto;
+  border: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75em;
+  border-radius: 0;
+  text-overflow: ellipsis;
+}
+
+.oneGame section form select--container {
+  position: relative;
+  background-color: #222;
+  border: #777 1px solid;
+  margin: 0 0 1.5em 0;
+  overflow: hidden;
+}
+
+.oneGame section form select--container::after {
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  right: 0.75em;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-top-color: #444;
+  border-width: 6px;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.oneGame section form input {
+  margin-top: 100px;
+}
+
+.collection section .Dashboard {
+  margin-left: 100px;
+  margin-right: 100px;
+  width: calc(100%-200px);
 }
 

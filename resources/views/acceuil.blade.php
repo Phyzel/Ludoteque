@@ -32,6 +32,10 @@
             <input name="name" type="text" placeholder="Search">
             <input class="submit" type="submit" placeholder="Chercher">
         </form>
+        <form method="post" action="{{ route('collection') }}">
+            @csrf
+            <input class="submit" type="submit" placeholder="Chercher">
+        </form>
         <div class="gameCase">
             @foreach($game as $key => $value)
                 <div class="game">

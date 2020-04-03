@@ -55,16 +55,16 @@ class GameController extends Controller
 		if($rate[0]->rating == "1" || $rate[0]->rating == "6" || $rate[0]->rating == "7"){
 			$rate = "https://pegi.info/themes/pegi/public-images/pegi/pegi3.png";
 		} else {
-			if($rate[0]->rating == "2" || $rate[0]->rating == "8" || $rate[0]->rating == "9"){
+			if($rate[0]->rating == "2" || $rate[0]->rating == "8"){
 				$rate = "https://pegi.info/themes/pegi/public-images/pegi/pegi7.png";
 			} else {
-				if($rate[0]->rating == "3" || $rate[0]->rating == "10"){
+				if($rate[0]->rating == "3" || $rate[0]->rating == "9"){
 					$rate = "https://pegi.info/themes/pegi/public-images/pegi/pegi12.png";
 				} else {
-					if($rate[0]->rating == "4" || $rate[0]->rating == "11"){
+					if($rate[0]->rating == "4" || $rate[0]->rating == "10"){
 						$rate = "https://pegi.info/themes/pegi/public-images/pegi/pegi16.png";
 					} else {
-						if($rate[0]->rating == "5" || $rate[0]->rating == "12"){
+						if($rate[0]->rating == "5" || $rate[0]->rating == "12" || $rate[0]->rating == "11"){
 							$rate = "https://pegi.info/themes/pegi/public-images/pegi/pegi18.png";
 						}
 					}
@@ -119,7 +119,9 @@ class GameController extends Controller
 			$platform = curl_exec($curl_platform);
 			$err_platform = curl_error($curl_platform);
 			$platform = json_decode($platform);
+			$consoles[$id_platforms] = $platform;
 		}
+		//dd($consoles);
 
 		// Requete curl vers les artworks
 		$curl_screenshot = curl_init();
@@ -193,7 +195,7 @@ class GameController extends Controller
 			'response' => $response,
 			'game' => $game,
 			'screenshots' => $screenshots,
-			'platform' => $platform,
+			'platforms' => $consoles,
 			'rate' => $rate
 		]);
     }
