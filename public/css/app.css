@@ -44,7 +44,7 @@ body section input:focus {
 }
 
 body section .submit {
-  margin-top: 200px;
+  margin-top: 10px;
 }
 
 body section .gameCase {
@@ -208,9 +208,69 @@ body section .gameCase .game img {
   margin-top: 100px;
 }
 
-.collection section .Dashboard {
+.collection .listGame .dashboard {
   margin-left: 100px;
   margin-right: 100px;
-  width: calc(100%-200px);
+  font-size: 20px;
+}
+
+.collection .listGame .dashboard .topDashboard {
+  background-color: #934;
+  display: flex;
+}
+
+.collection .listGame .dashboard .game {
+  background-color: #A45;
+  display: flex;
+  border-top: 2px solid #222;
+}
+
+.collection .listGame .dashboard .game .input {
+  padding-left: 10px;
+}
+
+.collection .listGame .dashboard .id {
+  padding-left: 10px;
+  width: 100px;
+  border-right: 2px solid #222;
+}
+
+.collection .listGame .dashboard .name {
+  padding-left: 10px;
+  width: 500px;
+  border-right: 2px solid #222;
+}
+
+.collection .listGame .dashboard .support {
+  padding-left: 10px;
+  width: 490px;
+  border-right: 2px solid #222;
+}
+
+.collection .listGame .dashboard input {
+  background-color: #A45;
+  border: none;
+  border-radius: 0px;
+  width: 100%;
+  height: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0%;
+  transform: translateX(0%);
+  text-align: center;
+  font-size: inherit;
+  background-color: none;
+  color: black;
+  transition-duration: 0.7s;
+}
+
+.collection .listGame .dashboard input:hover {
+  background-color: #B56;
+  transition-duration: 0.7s;
+}
+
+.collection .listGame .dashboard input:focus {
+  background-color: none;
+  transition-duration: 0.7s;
 }
 

@@ -34,7 +34,7 @@
         </form>
         <form method="post" action="{{ route('collection') }}">
             @csrf
-            <input class="submit" type="submit" placeholder="Chercher">
+            <input class="submit" type="submit" value="Chercher">
         </form>
         <div class="gameCase">
             @foreach($game as $key => $value)

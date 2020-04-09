@@ -26,7 +26,8 @@ class GameCollection extends Controller
     }
 
     public function delete(Request $request) {
-        $game = \App\game::where( 'idgame' ,$request->input('id'));
+        $id_game = $request->input('id');
+        $game = \App\game::find($id_game);
         $game->delete();
         $game = \App\game::all();
         return view('collection', ['games' => $game]);
